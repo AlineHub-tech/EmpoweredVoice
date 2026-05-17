@@ -1,0 +1,161 @@
+/* ==========================================================================
+   1. PREMIUM FONT & BRAND COLORS MATRIX (GLOBAL VARIABLES)
+   ========================================================================== */
+@import url('https://googleapis.com');
+
+:root {
+  /* Amabara yanyu mashya mwatse */
+  --bg-rose-light: #fff5f7;    /* Umweru urimo ka rosa */
+  --color-pink: #ec4899;        /* Pink igaragara */
+  --color-move: #8b5cf6;        /* Move / Purple / Violet */
+  --color-black: #0f172a;       /* Umukara wa Pro / Dark Slate */
+  --color-muted: #64748b;       /* Amagambo adashonje / Muted Slate */
+  
+  /* Font Family n'imiterere y'isuku */
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Inzira z'amashagaga (Smooth Transitions) */
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. SCREEN SAFETY CORE RESET (URINDA OVERFLOW KURI MOBILE ZOSE)
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box; /* Imana ko size ihura neza idasohoka padding */
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden; /* URINDA BURUNDU HORIZONTAL SCROLL KURI MOBILE */
+  scroll-behavior: smooth;
+  background-color: var(--bg-rose-light);
+  color: var(--color-black);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY MATRIX (AMAGAMBO MEZA YA PRO)
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-black);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p {
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+input, textarea, button {
+  font-family: var(--font-main); /* Emeza ko byose bifata font ya Pro */
+  font-size: inherit;
+}
+
+/* ==========================================================================
+   4. ULTRA-PRO LAYOUT REUSABLE UTILITIES
+   ========================================================================== */
+/* Main layout ihabwa umwanya uhagije munsi ya Fixed Navbar */
+.main-app-content {
+  flex-grow: 1;
+  padding-top: 76px; /* Uburebure bwa Fixed Navbar bwirinda guhisha content */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Container izunguruka ishyira ibintu hagati kuri Desktop */
+.app-container-max {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar Premium Design */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-rose-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.2); /* Move transparent scrollbar */
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-pink); /* Ihinduka Pink iyo uyikandyeho */
+}
+
+/* Selection text (Iyo umuntu ari gukopera amagambo ya Aline) */
+::selection {
+  background: rgba(236, 72, 153, 0.15);
+  color: var(--color-pink);
+}
+
+/* ==========================================================================
+   5. MEDIA QUERIES FOR SCREEN OVERFLOW PROTECTION (MOBILE & TABLET)
+   ========================================================================== */
+/* Kuri Screens za Laptops ntoya na Tablets */
+@media screen and (max-width: 1024px) {
+  .app-container-max {
+    padding: 0 20px;
+  }
+  
+  html {
+    font-size: 95%; /* Igabanya size y'amagambo gahoro kugira ngo bikwire neza */
+  }
+}
+
+/* Kuri Mobile Zose (iPhone, Samsung, n'izindi zose ntoya cyane) */
+@media screen and (max-width: 768px) {
+  .app-container-max {
+    padding: 0 16px; /* Padding ntoya ituma nta mwanya upfa kuri mobile */
+  }
+  
+  html {
+    font-size: 90%; /* Amagambo yose ahita yaringoniza neza kuri mobile screen */
+  }
+
+  /* Ibihisha ibintu bishobora kurenga umurongo byanze */
+  .main-app-content {
+    padding-top: 72px; /* Navbar ya mobile iba ari ntoya gato */
+  }
+}
+
+/* Urinda ko ibintu by'amashusho cyangwa ifomu birenga screen */
+img, video, svg, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

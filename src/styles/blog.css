@@ -1,0 +1,340 @@
+@import url('https://googleapis.com');
+
+:root {
+  --bg-rose-light: #fff5f7;
+  --color-pink: #ec4899;
+  --color-move: #8b5cf6;
+  --color-black: #0f172a;
+  --color-muted: #64748b;
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --transition-pro: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-page-container {
+  font-family: var(--font-main);
+  background-color: var(--bg-rose-light);
+  min-height: 100vh;
+  padding: 120px 24px 80px 24px; /* Gutanga umwanya uhagije munsi ya Navbar */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER SECTION ===== */
+.blog-header-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+.blog-mini-badge {
+  background: rgba(236, 72, 153, 0.08);
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  color: var(--color-pink);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.blog-header-section h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+}
+
+.blog-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.author-name {
+  color: var(--color-move);
+  font-weight: 700;
+}
+
+/* PRO SEARCH BAR DESIGN */
+.blog-search-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  color: var(--color-move);
+  pointer-events: none;
+}
+
+.blog-search-wrapper input {
+  width: 100%;
+  padding: 16px 50px 16px 56px;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  font-weight: 500;
+  background: #ffffff;
+  color: var(--color-black);
+  border: 2px solid rgba(139, 92, 246, 0.1);
+  border-radius: 99px;
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.03);
+  transition: var(--transition-pro);
+  box-sizing: border-box;
+}
+
+.blog-search-wrapper input:focus {
+  outline: none;
+  border-color: var(--color-pink);
+  box-shadow: 0 8px 30px rgba(236, 72, 153, 0.12);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* CATEGORY SCROLL FILTER BADGES */
+.category-filters-scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.category-filter-btn {
+  background: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  color: var(--color-black);
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-pro);
+}
+
+.category-filter-btn:hover {
+  background: rgba(139, 92, 246, 0.05);
+  border-color: var(--color-move);
+  color: var(--color-move);
+}
+
+.category-filter-btn.active {
+  background: linear-gradient(135deg, var(--color-move), var(--color-pink));
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.25);
+}
+
+/* ===== BLOG POSTS GRID ===== */
+.blog-grid-section-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.blog-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Columns on big screens */
+  gap: 28px;
+}
+
+.blog-article-card {
+  background: #ffffff;
+  border: 1px solid rgba(236, 72, 153, 0.06);
+  border-radius: 24px;
+  padding: 28px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  transition: var(--transition-pro);
+}
+
+.blog-article-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(139, 92, 246, 0.08);
+  border-color: rgba(236, 72, 153, 0.15);
+}
+
+.card-top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.article-category-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(139, 92, 246, 0.06);
+  color: var(--color-move);
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-icon-style {
+  display: flex;
+  align-items: center;
+}
+
+.blog-copy-icon-btn {
+  background: rgba(0, 0, 0, 0.02);
+  border: none;
+  color: var(--color-muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-pro);
+}
+
+.blog-copy-icon-btn:hover {
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--color-pink);
+}
+
+.blog-copy-icon-btn.copied {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.article-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-black);
+  line-height: 1.4;
+  margin: 0 0 14px 0;
+}
+
+.article-content {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  flex-grow: 1; /* Bituma ama cards yose anyongana akagira uburebure bumwe */
+}
+
+.card-footer-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding-top: 16px;
+}
+
+.author-signature {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.read-time-tag {
+  font-size: 0.78rem;
+  color: var(--color-pink);
+  font-weight: 700;
+  background: rgba(236, 72, 153, 0.05);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* NO RESULTS BOX VIEW */
+.no-results {
+  grid-column: 1 / -1; /* Bifata umwanya wose w'ikirandura */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.no-results-box {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 450px;
+  margin: 0 auto;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+  border: 1px dashed rgba(139, 92, 246, 0.2);
+}
+
+.no-results-box h3 {
+  font-size: 1.3rem;
+  color: var(--color-black);
+  margin: 0 0 10px 0;
+}
+
+.no-results-box p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  margin: 0 0 20px 0;
+}
+
+.reset-search-btn {
+  background: var(--color-move);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: var(--font-main);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-pro);
+}
+
+.reset-search-btn:hover {
+  background: var(--color-pink);
+}
+
+/* ===== RESPONSIVE DESIGN (SAFETY CONTROLS) ===== */
+@media screen and (max-width: 1100px) {
+  .blog-articles-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns on Tablet */
+  }
+  .blog-header-section h1 {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog-articles-grid {
+    grid-template-columns: 1fr; /* 1 Column on Mobile zose */
+    gap: 20px;
+  }
+  .blog-page-container {
+    padding: 100px 16px 60px 16px;
+  }
+  .blog-header-section h1 {
+    font-size: 1.8rem;
+  }
+  .category-filters-scroll {
+    justify-content: flex-start;
+    overflow-x: auto; /* Bituma unyereza (scroll) ibyiciro kuri mobile bitarenze screen */
+    padding-bottom: 8px;
+    white-space: nowrap;
+  }
+  .blog-search-wrapper input {
+    padding: 14px 40px 14px 48px;
+    font-size: 0.95rem;
+  }
+}

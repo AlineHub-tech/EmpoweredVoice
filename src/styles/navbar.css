@@ -1,0 +1,227 @@
+/* Kuzana font ya Pro ifite isuku cyane */
+@import url('https://googleapis.com');
+
+:root {
+  /* Amabara mwatse */
+  --bg-light-rose: #fff5f7; /* Umweru urimo ka rosa */
+  --color-pink: #ec4899;     /* Pink igaragara */
+  --color-move: #8b5cf6;     /* Move / Violet */
+  --color-black: #0f172a;    /* Black / Dark Slate */
+  
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 76px;
+  background: rgba(255, 245, 247, 0.85); /* Umweru urimo rosa + glassmorphism */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(236, 72, 153, 0.15); /* Akanyari ka pink */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-main);
+  box-sizing: border-box;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Voice Micro Logo (Black, Move & Pink) */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo-icon-wrapper {
+  background: linear-gradient(135deg, var(--color-move), var(--color-pink));
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+  animation: micGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes micGlow {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3); }
+  50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4); }
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: -0.5px;
+}
+
+.logo-sub {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-pink);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: -2px;
+}
+
+/* Nav Links - Desktop (Ifite Icons) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-black);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.nav-item-icon {
+  display: flex;
+  align-items: center;
+  color: var(--color-move); /* Move ku ma icons default */
+  transition: var(--transition-smooth);
+}
+
+.nav-item:hover {
+  background: rgba(139, 92, 246, 0.06); /* Move nshya */
+  color: var(--color-pink);
+}
+
+.nav-item:hover .nav-item-icon {
+  color: var(--color-pink);
+  transform: translateY(-1px);
+}
+
+/* Iyo link iri active */
+.nav-item.active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+  color: var(--color-pink);
+}
+
+.nav-item.active .nav-item-icon {
+  color: var(--color-pink);
+}
+
+/* Actions (Language Switcher & Toggle) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-switcher {
+  background: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  color: var(--color-black);
+  padding: 8px 16px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: var(--transition-smooth);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.lang-switcher:hover {
+  border-color: var(--color-pink);
+  color: var(--color-pink);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.15);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-black);
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* RESPONSIVE DESIGN (Bikwiranye na Mobile na Tablet badasohoka) */
+
+/* Kuri Screens za Tablet / Laptops ntoya */
+@media screen and (max-width: 1280px) {
+  .nav-item {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    gap: 6px;
+  }
+  .nav-container {
+    padding: 0 16px;
+  }
+}
+
+/* Kuri Mobile na Tablet Ntoya (Ihita ihinduka Dropdown nziza) */
+@media screen and (max-width: 1100px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 76px);
+    background: var(--bg-light-rose);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    gap: 8px;
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    border-top: 1px solid rgba(236, 72, 153, 0.1);
+  }
+
+  .nav-links.nav-active {
+    transform: translateX(0);
+  }
+
+  .nav-item {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1.05rem;
+    box-sizing: border-box;
+    border-radius: 12px;
+  }
+}

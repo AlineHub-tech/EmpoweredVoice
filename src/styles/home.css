@@ -1,0 +1,299 @@
+@import url('https://googleapis.com');
+
+:root {
+  --bg-rose-light: #fff5f7;
+  --color-pink: #ec4899;
+  --color-move: #8b5cf6;
+  --color-black: #0f172a;
+  --color-muted: #64748b;
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+}
+
+.home-container {
+  font-family: var(--font-main);
+  background-color: var(--bg-rose-light);
+  min-height: 100vh;
+  padding-top: 76px; /* Bikwira neza munsi ya Navbar */
+  overflow-x: hidden;
+}
+
+/* ===== HERO SECTION WITH LUXURY GRADIENT BACKGROUND ===== */
+.hero-section {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+  box-sizing: border-box;
+  /* Background ihinduranya amabara mu buryo bwa Pro */
+  background: linear-gradient(135deg, #fff5f7 0%, #f5f3ff 50%, #fce7f3 100%);
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Icons Layer Setup */
+.floating-icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Intabuza gukanda kuri kintu cyo mumbere */
+  z-index: 1;
+}
+
+.float-icon {
+  position: absolute;
+  opacity: 0.25;
+  color: var(--color-move);
+}
+
+/* Imyanya y'ama Icons agenda arenga inyuma */
+.fi-1 { top: 15%; left: 10%; color: var(--color-pink); }
+.fi-2 { top: 20%; right: 12%; color: var(--color-move); }
+.fi-3 { bottom: 25%; left: 15%; color: var(--color-move); }
+.fi-4 { bottom: 20%; right: 15%; color: var(--color-pink); }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+}
+
+.hero-badge {
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  color: var(--color-move);
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.hero-motto {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-black);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-move), var(--color-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtext {
+  font-size: 1.15rem;
+  color: var(--color-muted);
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+/* Quote Carousel Card Premium View */
+.quote-carousel-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.quote-of-the-day-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(236, 72, 153, 0.15);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.04);
+  text-align: left;
+}
+
+.quote-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.quote-badge-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-pink);
+}
+
+.copy-btn-action {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-black);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.copy-btn-action:hover {
+  border-color: var(--color-pink);
+  color: var(--color-pink);
+  background: rgba(236, 72, 153, 0.02);
+}
+
+.quote-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-black);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.quote-author {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-move);
+  display: block;
+}
+
+/* Carousel Dots Indicator */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--color-pink);
+}
+
+/* ===== FEATURES SECTION (6 PILLARS GRID) ===== */
+.features-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  box-sizing: border-box;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 60px auto;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+/* Grid Layout - 3 Columns on Desktop, 2 on Tablet, 1 on Mobile */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.icon-wrapper {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+  color: var(--color-move);
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0 0 12px 0;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE DESIGN FOR SCREEN SAFETY ===== */
+@media screen and (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns kuri Tablet */
+  }
+  .hero-motto {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr; /* 1 Column kuri Mobile zose */
+  }
+  .hero-section {
+    padding: 60px 16px;
+  }
+  .hero-motto {
+    font-size: 2rem;
+  }
+  .hero-subtext {
+    font-size: 1rem;
+  }
+  .quote-of-the-day-card {
+    padding: 20px;
+  }
+  .quote-text {
+    font-size: 1.05rem;
+  }
+}

@@ -1,0 +1,318 @@
+@import url('https://googleapis.com');
+
+:root {
+  --bg-rose-light: #fff5f7;
+  --color-pink: #ec4899;
+  --color-move: #8b5cf6;
+  --color-black: #0f172a;
+  --color-muted: #64748b;
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --transition-pro: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.word-page-container {
+  font-family: var(--font-main);
+  background-color: var(--bg-rose-light);
+  min-height: 100vh;
+  padding: 120px 24px 80px 24px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER VIEW ===== */
+.word-page-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 50px auto;
+}
+
+.word-mini-badge {
+  background: rgba(236, 72, 153, 0.08);
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  color: var(--color-pink);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.animate-pulse-slow {
+  animation: pulseGlowSmooth 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlowSmooth {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.8; }
+}
+
+.word-page-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: -1px;
+  margin: 0 0 12px 0;
+}
+
+.word-header-desc {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* PRO SEARCH BOX */
+.word-search-box-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon-word {
+  position: absolute;
+  left: 20px;
+  color: var(--color-move);
+  pointer-events: none;
+}
+
+.word-search-box-wrapper input {
+  width: 100%;
+  padding: 14px 44px 14px 54px;
+  font-size: 0.98rem;
+  font-family: var(--font-main);
+  font-weight: 500;
+  background: #ffffff;
+  color: var(--color-black);
+  border: 2px solid rgba(139, 92, 246, 0.1);
+  border-radius: 99px;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.02);
+  transition: var(--transition-pro);
+  box-sizing: border-box;
+}
+
+.word-search-box-wrapper input:focus {
+  outline: none;
+  border-color: var(--color-pink);
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.12);
+}
+
+.clear-word-search {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+/* FILTER TABS ROW STYLE */
+.word-filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.word-tab {
+  background: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  color: var(--color-black);
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-pro);
+}
+
+.word-tab:hover {
+  background: rgba(139, 92, 246, 0.05);
+  color: var(--color-move);
+}
+
+.word-tab.active {
+  background: var(--color-black);
+  color: #ffffff;
+  border-color: var(--color-black);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== CARDS GRID LIST ===== */
+.word-list-section {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.verses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.verse-card {
+  background: #ffffff;
+  border: 1px solid rgba(236, 72, 153, 0.06);
+  border-radius: 24px;
+  padding: 32px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  transition: var(--transition-pro);
+}
+
+.verse-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(139, 92, 246, 0.06);
+  border-color: rgba(236, 72, 153, 0.15);
+}
+
+.verse-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.verse-ref-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.source-indicator-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.source-indicator-dot.Jesus { background: rgba(139, 92, 246, 0.08); color: var(--color-move); }
+.source-indicator-dot.Paul { background: rgba(236, 72, 153, 0.08); color: var(--color-pink); }
+.source-indicator-dot.Quran { background: #fef3c7; color: #d97706; } /* Amber tone for Quranic aesthetics */
+.source-indicator-dot.Ministers { background: rgba(15, 23, 42, 0.05); color: var(--color-black); }
+
+.verse-ref-box h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 2px 0;
+  letter-spacing: -0.5px;
+}
+
+.verse-card-sub-title {
+  font-size: 0.85rem;
+  color: var(--color-pink);
+  font-weight: 600;
+}
+
+.word-copy-btn {
+  background: rgba(0, 0, 0, 0.02);
+  border: none;
+  color: var(--color-black);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: var(--transition-pro);
+}
+
+.word-copy-btn:hover {
+  background: rgba(236, 72, 153, 0.05);
+  color: var(--color-pink);
+}
+
+.word-copy-btn.copied {
+  background: #10b981;
+  color: #ffffff;
+}
+
+/* SCRIPTURE SBOX */
+.scripture-text-box {
+  background: rgba(139, 92, 246, 0.03);
+  border-left: 4px solid var(--color-move);
+  padding: 24px;
+  border-radius: 0 16px 16px 0;
+  margin-bottom: 24px;
+}
+
+.scripture-text-box p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-black);
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+}
+
+/* EXPLANATION AREA */
+.scripture-explanation h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0 0 10px 0;
+}
+
+.scripture-explanation p {
+  font-size: 0.98rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* NO RESULTS FALLBACK */
+.no-verses-found {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVE MATRIX ===== */
+@media screen and (max-width: 768px) {
+  .word-page-container {
+    padding: 100px 16px 60px 16px;
+  }
+  .word-page-header h1 {
+    font-size: 2rem;
+  }
+  .verse-card {
+    padding: 24px;
+  }
+  .verse-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .word-copy-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .scripture-text-box p {
+    font-size: 1.1rem;
+  }
+  .word-filter-tabs {
+    justify-content: flex-start;
+    overflow-x: auto; /* Bituma unyereza (scroll) ibyiciro kuri mobile bitarenze screen */
+    padding-bottom: 6px;
+    white-space: nowrap;
+  }
+  .word-tab {
+    padding: 6px 16px;
+    font-size: 0.82rem;
+  }
+}

@@ -1,0 +1,332 @@
+@import url('https://googleapis.com');
+
+:root {
+  --bg-rose-light: #fff5f7;
+  --color-pink: #ec4899;
+  --color-move: #8b5cf6;
+  --color-black: #0f172a;
+  --color-muted: #64748b;
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --transition-pro: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.motivation-container {
+  font-family: var(--font-main);
+  background-color: var(--bg-rose-light);
+  min-height: 100vh;
+  padding: 120px 24px 80px 24px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER VIEW ===== */
+.motivation-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+.motivation-badge {
+  background: rgba(236, 72, 153, 0.08);
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  color: var(--color-pink);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.animate-pulse-fast {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.12); opacity: 0.8; }
+}
+
+.motivation-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: -1px;
+  margin: 0 0 12px 0;
+}
+
+.motivation-desc {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* SEARCH BAR PRO */
+.motivation-search-box {
+  position: relative;
+  max-width: 580px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon-mot {
+  position: absolute;
+  left: 20px;
+  color: var(--color-move);
+  pointer-events: none;
+}
+
+.motivation-search-box input {
+  width: 100%;
+  padding: 14px 44px 14px 54px;
+  font-size: 0.98rem;
+  font-family: var(--font-main);
+  font-weight: 500;
+  background: #ffffff;
+  color: var(--color-black);
+  border: 2px solid rgba(139, 92, 246, 0.1);
+  border-radius: 99px;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.02);
+  transition: var(--transition-pro);
+  box-sizing: border-box;
+}
+
+.motivation-search-box input:focus {
+  outline: none;
+  border-color: var(--color-pink);
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.12);
+}
+
+.clear-search-mot {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+/* TABS ROW */
+.motivation-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tab-btn {
+  background: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  color: var(--color-black);
+  padding: 10px 22px;
+  border-radius: 99px;
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-pro);
+}
+
+.tab-btn:hover {
+  background: rgba(139, 92, 246, 0.05);
+  color: var(--color-move);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--color-move), var(--color-pink));
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.25);
+}
+
+/* ===== CARDS LIST ===== */
+.motivation-list-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.motivation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.motivation-card {
+  background: #ffffff;
+  border: 1px solid rgba(236, 72, 153, 0.06);
+  border-radius: 24px;
+  padding: 32px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  transition: var(--transition-pro);
+}
+
+.motivation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.06);
+  border-color: rgba(236, 72, 153, 0.12);
+}
+
+.motivation-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap; /* Establishes line safety on mobile */
+  margin-bottom: 24px;
+}
+
+.person-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar-badge-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-badge-icon.Faith {
+  background: rgba(139, 92, 246, 0.08);
+  color: var(--color-move);
+}
+
+.avatar-badge-icon.Overcomer {
+  background: rgba(236, 72, 153, 0.08);
+  color: var(--color-pink);
+}
+
+.person-info h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 2px 0;
+  letter-spacing: -0.5px;
+}
+
+.person-role {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.motivation-copy-btn {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid transparent;
+  color: var(--color-black);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: var(--transition-pro);
+}
+
+.motivation-copy-btn:hover {
+  background: rgba(236, 72, 153, 0.05);
+  border-color: rgba(236, 72, 153, 0.15);
+  color: var(--color-pink);
+}
+
+.motivation-copy-btn.copied {
+  background: #10b981;
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* QUOTE BOX DESIGN */
+.motivation-quote-box {
+  background: rgba(139, 92, 246, 0.03);
+  border-left: 4px solid var(--color-move);
+  padding: 20px;
+  border-radius: 0 16px 16px 0;
+  margin-bottom: 24px;
+}
+
+.motivation-quote-box p {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-black);
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0;
+}
+
+/* STORY BOX DESIGN */
+.motivation-story-box h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lightbulb-icon-glow {
+  color: var(--color-pink);
+}
+
+.motivation-story-box p {
+  font-size: 0.96rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* NO RESULTS STATE */
+.no-motivation-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--color-muted);
+}
+
+.alert-icon-mot {
+  color: var(--color-pink);
+  margin-bottom: 12px;
+}
+
+/* ===== RESPONSIVE SETTINGS ===== */
+@media screen and (max-width: 768px) {
+  .motivation-container {
+    padding: 100px 16px 60px 16px;
+  }
+  .motivation-header h1 {
+    font-size: 2rem;
+  }
+  .motivation-card {
+    padding: 20px;
+  }
+  .motivation-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .motivation-copy-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .motivation-quote-box p {
+    font-size: 1rem;
+  }
+  .motivation-tabs {
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+}

@@ -1,0 +1,371 @@
+@import url('https://googleapis.com');
+
+:root {
+  --bg-rose-light: #fff5f7;
+  --color-pink: #ec4899;
+  --color-move: #8b5cf6;
+  --color-black: #0f172a;
+  --color-muted: #64748b;
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --transition-pro: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gifts-page-container {
+  font-family: var(--font-main);
+  background-color: var(--bg-rose-light);
+  min-height: 100vh;
+  padding: 60px 24px 80px 24px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ===== HERO TOP SECTION ===== */
+.gifts-hero-section {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 50px auto;
+}
+
+.gifts-badge {
+  background: rgba(236, 72, 153, 0.08);
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  color: var(--color-pink);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.gift-icon-spin {
+  animation: pulseGlowIcon 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlowIcon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); color: var(--color-move); }
+}
+
+.gifts-hero-section h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin: 0 0 14px 0;
+}
+
+.gifts-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== 10 CORE GIFTS MATRIX GRID ===== */
+.gifts-matrix-title-area {
+  text-align: center;
+  margin: 60px auto 30px auto;
+  max-width: 800px;
+}
+
+.gifts-matrix-title-area h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: -0.5px;
+}
+
+.gifts-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Columns Layout on Desktop */
+  gap: 28px;
+  max-width: 1300px;
+  margin: 0 auto 60px auto;
+}
+
+.matrix-card {
+  background: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.06);
+  border-radius: 24px;
+  padding: 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-pro);
+}
+
+.matrix-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.matrix-icon-box {
+  background: rgba(139, 92, 246, 0.06);
+  color: var(--color-move);
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gifts-copy-btn {
+  background: rgba(0, 0, 0, 0.02);
+  border: none;
+  color: var(--color-muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-pro);
+}
+
+.gifts-copy-btn:hover {
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--color-pink);
+}
+
+.gifts-copy-btn.copied {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.matrix-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+}
+
+.matrix-card p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  flex-grow: 1; /* Synchronizes layout height automatically */
+}
+
+.card-motto-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-pink);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.star-accent-color {
+  color: var(--color-move);
+}
+
+/* ===== LEADERSHIP MANIFESTO BOX ===== */
+.gifts-manifesto-box {
+  background: #ffffff;
+  border: 1px solid rgba(236, 72, 153, 0.12);
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 1300px;
+  margin: 0 auto 60px auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.02);
+}
+
+.manifesto-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.manifesto-icon-wrapper {
+  background: linear-gradient(135deg, var(--color-move), var(--color-pink));
+  color: #ffffff;
+  padding: 14px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.2);
+}
+
+.manifesto-text-group h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.manifesto-text-group p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-black);
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0 0 8px 0;
+}
+
+.manifesto-author {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-move);
+}
+
+.manifesto-copy-action {
+  background: var(--color-black);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: var(--transition-pro);
+  white-space: nowrap;
+}
+
+.manifesto-copy-action:hover {
+  background: var(--color-pink);
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.25);
+}
+
+/* ===== STRATEGIC PRINCIPLES SECTIONS ===== */
+.gifts-principles-section {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.principles-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.lightbulb-pro-icon {
+  color: var(--color-pink);
+}
+
+.gifts-principles-section h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-black);
+  text-align: center;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.principles-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.principle-row {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.principle-number {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-pink);
+  background: rgba(236, 72, 153, 0.06);
+  padding: 4px 12px;
+  border-radius: 10px;
+}
+
+.principle-body h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0 0 6px 0;
+}
+
+.principle-body p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE MATRIX OVERFLOW SAFE ===== */
+@media screen and (max-width: 1200px) {
+  .gifts-matrix-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns Layout on Tablets */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .gifts-manifesto-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+  .manifesto-copy-action {
+    width: 100%;
+    justify-content: center;
+  }
+  .gifts-hero-section h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gifts-matrix-grid {
+    grid-template-columns: 1fr; /* 1 Column Layout on Mobile zose */
+    gap: 20px;
+  }
+  .gifts-page-container {
+    padding: 40px 16px 60px 16px;
+  }
+  .gifts-hero-section h1 {
+    font-size: 1.8rem;
+  }
+  .matrix-card {
+    padding: 24px;
+  }
+  .manifesto-left {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .manifesto-text-group p {
+    font-size: 1rem;
+  }
+  .principle-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .gifts-principles-section h2 {
+    font-size: 1.4rem;
+  }
+}
