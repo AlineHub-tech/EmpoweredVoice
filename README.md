@@ -98,10 +98,10 @@ The vision, mission, and **The Core Values Manifesto** — the deeply rooted pri
 ---
 Screenshoots📸
 
-<img width="135" height="626" alt="Screenshot 2026-05-17 190533" src="https://github.com/user-attachments/assets/265e8f4c-37d8-44b6-8d2d-5898d4c2f9bf" />
-<img width="136" height="633" alt="Screenshot 2026-05-17 190506" src="https://github.com/user-attachments/assets/bd9fdf61-5af9-487b-803a-c2494a3fdd52" />
-<img width="136" height="634" alt="Screenshot 2026-05-17 190441" src="https://github.com/user-attachments/assets/993f40b7-b05d-4193-b209-8d6efe25aa21" />
-<img width="136" height="617" alt="Screenshot 2026-05-17 190400" src="https://github.com/user-attachments/assets/9a2557b0-1bef-48e5-9925-25670122994e" />
+<img width="135" height="91" alt="Screenshot 2026-05-17 190533" src="https://github.com/user-attachments/assets/265e8f4c-37d8-44b6-8d2d-5898d4c2f9bf" />
+<img width="136" height="91" alt="Screenshot 2026-05-17 190506" src="https://github.com/user-attachments/assets/bd9fdf61-5af9-487b-803a-c2494a3fdd52" />
+<img width="136" height="91" alt="Screenshot 2026-05-17 190441" src="https://github.com/user-attachments/assets/993f40b7-b05d-4193-b209-8d6efe25aa21" />
+<img width="136" height="91" alt="Screenshot 2026-05-17 190400" src="https://github.com/user-attachments/assets/9a2557b0-1bef-48e5-9925-25670122994e" />
 
 ---
 ## 🛠️ Tech Stack
