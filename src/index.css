@@ -1,1 +1,15 @@
-         
+import React, { useState } from 'react';
+import './styles/global.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+// Imbuga zose ziri kuri web yacu
+import Home from './pages/Home';
+import Blog from './pages/Blog';
+import Motivation from './pages/Motivation';
+import Inspiration from './pages/Inspiration';
+import WordOfGod from './pages/WordOfGod';
+import Quotes from './pages/Quotes';
+import Gifts from './pages/Gifts';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs'         
