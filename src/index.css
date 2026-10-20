@@ -6,4 +6,4 @@ import Home from './pages/Home';
 import Blog from './pages/Blog';
 import React, { useState } from 'react';
 import './styles/global.css';
-import Navbar from './components/N
+import Navbar from './components/
