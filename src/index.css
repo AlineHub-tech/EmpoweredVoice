@@ -6,7 +6,7 @@ mport React, { useState } from 'react';
 import './styles/global.css';
 import Navbar from './components/Navbar';
 import Footer from 
-mport React, { useState } from 'react';
+mport React, { useState } fro 'react';
 import './styles/global.css';
 import Navbar from './components/Navbar';
 import Footer from 
