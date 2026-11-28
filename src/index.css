@@ -1,6 +1,6 @@
 { useState } from 'react';import './styles/global.cs'
 import Navbar from './components/Navbar';import Footr from
-mport React, { useState } from 'react';import './styles/global.css'
+mport React, { useState } from 'react';import './styles/lobal.css'
 import Navbar from './componen
 impot Footer fromport React, { use
 import './styles/global.css';iport Navbar from './components/Navba';
